@@ -1,0 +1,33 @@
+<h3 class="mb-3 mt-4">
+    Khóa học của tôi
+</h3>
+
+<div class="table-responsive">
+  <table class="table table-bordered table-hover align-middle">
+    <thead class="text-center">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tên khóa học</th>
+        <th scope="col">Trình độ</th>
+        <th scope="col">Thời gian tạo</th>
+        <th scope="col">Chi tiết</th>
+      </tr>
+    </thead>
+    <tbody>
+        {{#each courses}}
+        <tr>
+            <th scope="row">{{ sum @index 1}}</th>
+            <td>{{this.name}}</td>
+            <td>{{this.level}}</td>
+            <td>{{this.createdAt}}</td>
+            <td>
+                <div class="d-flex justify-content-center gap-2">
+                    <a href="/courses/{{this._id}}/edit" class="btn btn-primary btn-sm">Sửa</a>
+                    <a class="btn btn-danger btn-sm">Xóa</a>
+                </div>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+  </table>
+</div>
